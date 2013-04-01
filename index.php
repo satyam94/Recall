@@ -19,14 +19,11 @@
 				
 					$file="text_files/todo.txt";
 					$file1="text_files/done.txt";
-					
-					$show_start="<div class = 'container'>";
-					$show_end="</div>";
 
-					$lines=file($file);
+					$lines=file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 					$x=sizeof($lines);
 
-					$liness=file($file1);
+					$liness=file($file1, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 					$ss=sizeof($liness);
 					
 					echo '
@@ -48,7 +45,7 @@
 						$stat = fstat($file_write);
 						ftruncate($file, $stat['size']-1);
 						$a = $_REQUEST["todo"];
-						$lines_temp=file($file);
+						$lines_temp=file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 						$size=sizeof($lines_temp);
 						if($size!=0)
 						{
@@ -98,7 +95,7 @@
 						$a=$_REQUEST['edit'];
 						$a.="\n";
 
-						$lines=file($file);
+						$lines=file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 						$file_removedata=fopen($file, 'w') or die("Can't open file");
 						fclose($file_removedata);
@@ -119,11 +116,18 @@
 					for($i=sizeof($lines)-1;$i>=0;$i--)
 					{
 						$length=strlen($lines[$i]);
+						
+						$show_start="<div class = 'container'>";
+						$show_end="</div>";
+						
 						$div_start="<div class = 'type' id = 'div".$i."'>";
 						$div_end="</div>";
+						
 						$edit="<input type='image' src='images/edit.png' onclick='editdata(".$length.",".$i.",".$ss.")' class='edit' id='edit".$i."'>";
 						$cross="<input type='image' src='images/delete.png' onclick='deletedata(".$length.",".$i.",".$ss.")' class='cross' id='input".$i."'>";
+						
 						$hr="<hr class = 'horizontal-ruler' id='hor".$i."'>";
+						
 						echo $show_start;
 						echo $div_start;
 						echo $lines[$i];
@@ -143,7 +147,7 @@
 						$file="text_files/done.txt";
 
 						$file_read=fopen($file,'r') or die("Cant open file");
-						$lines=file($file);
+						$lines=file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 						$show_start="<div class = 'container'>";
 						$div_start="<div class = 'type'>";
@@ -169,7 +173,7 @@
 						{
 							$index=$_REQUEST['index'];
 
-							$liness=file($file1);
+							$liness=file($file1, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 							
 							$file_deletedata=fopen($file1,'w') or die("Cant open file");
 							fclose($file_deletedata);
