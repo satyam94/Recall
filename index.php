@@ -3,9 +3,9 @@
 		<title>
 			Todo Note app
 		</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<script language="javascript" type="text/javascript" src="jquery.js"></script>
-		<script language="javascript" type="text/javascript" src="script.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script language="javascript" type="text/javascript" src="script/jquery.js"></script>
+		<script language="javascript" type="text/javascript" src="script/script.js"></script>
 	</head>
 	<body>
 		<div class="main">
@@ -17,8 +17,8 @@
 				</div>
 				<?php
 				
-					$file="todo.txt";
-					$file1="done.txt";
+					$file="text_files/todo.txt";
+					$file1="text_files/done.txt";
 					
 					$show_start="<div class = 'container'>";
 					$show_end="</div>";
@@ -32,9 +32,9 @@
 					echo '
 							<div id="10">
 								 <form class="form">
-									Newer Todo List<br> 
+									Newer Todo List 
 									<input type="text" name="todo" placeholder=" Add you Task here..." autofocus="true" class="text_area" id="inputfield" onkeydown="return keypres(this.form,'.$x.",".$ss.')">
-									<input type="submit" value="Submit" id="button" onclick="return sendform(this.form,'.$x.",".$ss.')">
+									<input type="image" src="images/insert.png" id="button" onclick="return sendform(this.form,'.$x.",".$ss.')">
 								</form>
 							</div>
 						</div>
@@ -121,8 +121,8 @@
 						$length=strlen($lines[$i]);
 						$div_start="<div class = 'type' id = 'div".$i."'>";
 						$div_end="</div>";
-						$edit="<input type='button' value='e' onclick='editdata(".$length.",".$i.",".$ss.")' class='cross' id='edit".$i."'>";
-						$cross="<input type='button' value='x' onclick='deletedata(".$length.",".$i.",".$ss.")' class='cross' id='input".$i."'>";
+						$edit="<input type='image' src='images/edit.png' onclick='editdata(".$length.",".$i.",".$ss.")' class='edit' id='edit".$i."'>";
+						$cross="<input type='image' src='images/delete.png' onclick='deletedata(".$length.",".$i.",".$ss.")' class='cross' id='input".$i."'>";
 						$hr="<hr class = 'horizontal-ruler' id='hor".$i."'>";
 						echo $show_start;
 						echo $div_start;
@@ -140,7 +140,7 @@
 				Recently Done
 				<div id="12">
 					<?php
-						$file="done.txt";
+						$file="text_files/done.txt";
 
 						$file_read=fopen($file,'r') or die("Cant open file");
 						$lines=file($file);
@@ -153,7 +153,7 @@
 						
 						for($i=sizeof($lines)-1;$i>=0;$i--)
 						{
-							$cross="<input type='button' value='x' onclick='totaldelete(".$i.")' class='cross' id='output".$i."'>";
+							$cross="<input type='image' src='images/delete.png' onclick='totaldelete(".$i.")' class='cross' id='output".$i."'>";
 							$hr="<hr class = 'horizontal-ruler' id='hor_out".$i."'>";
 
 							echo $show_start;

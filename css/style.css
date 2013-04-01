@@ -1,0 +1,156 @@
+body
+{
+	background-image: url("../images/background.webp"); 
+	margin:0px;
+	padding: 0px;
+	font-size:20px;
+	font-family:purisa;
+}
+.fill
+{
+	position:absolute;
+	background-color:#545446;
+	margin:2% 0px;
+	width: 10.5%;
+	height:100px;
+}
+.submit
+{	
+	margin : 1% auto 2% auto;
+	padding : 1.75% 2%;
+	width : 75%;
+	height: 200px;
+	background-image: url("../images/div_background.png");
+	background-color: white;
+	box-shadow : 1px 1px 5px 5px #ccc;
+	border-radius: 5px;
+}
+.heading_sur
+{
+	float:left;
+	margin:0px;
+	padding : 0%;
+	height:200px;
+	width:25%;
+	background-color:#707059;
+	background-image: url("../images/logo.jpg");
+	background-position-x:-20px;
+}
+.heading
+{
+	margin:0px 0px 0px -8px;
+	text-align: center;
+	vertical-align: center;
+	font-size:45px;
+	line-height: 1.125;
+	font-family:Arial;
+	text-transform: uppercase;
+	color:grey;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.5);
+}
+.form
+{
+	float:left;
+	width:60%;
+	height:100px;
+	margin: 0px 0px 0px 15%;
+	font-size: 28px;
+}
+.cross
+{
+	float:right;
+	height:30px;
+	width:30px;
+	margin:3px;
+}
+.text_area
+{
+	width: 75%;
+	height: 60px;
+	border-radius: 5px;
+	font-size:25px;
+	padding-left: 5px;
+	margin : 15px 0px 0px 0px;
+	background-color: grey;
+	color:red; 
+	box-shadow: inset 0px 0px 10px black;
+}
+#button
+{
+	width:5%;
+	height:60px;
+	margin: 15px 0px 0px 20px;
+	font-size:20px;
+	position: absolute;
+}
+.edit
+{
+	float:right;
+	height:30px;
+	width:30px;
+	margin:3px;
+}
+.php_data_todo
+{
+	float:left;
+	margin : 1% 0% 2% 10.5%;
+	padding : 1.75% 2%;
+	width : 35%;
+	height: auto;
+	background-image: url("../images/div_background.png");
+	background-color: white;
+	border-radius: 5px;
+	box-shadow : 1px 1px 5px 5px #ccc;	
+}
+.php_data_done
+{
+	float:right;
+	margin : 1% 10.5% 2% 0%;
+	padding : 1.75% 2%;
+	width : 35%;
+	height: auto;
+	background-image: url("../images/div_background.png");
+	background-color: white;
+	border-radius: 5px;
+	box-shadow : 1px 1px 5px 5px #ccc;
+}
+.container
+{
+	margin: 25px 50px 25px 50px;
+	padding: 10px;
+	border-radius: 8px;
+/*	box-shadow: 0px 0px 35px #888;*/
+	width:auto;
+	height:auto;
+	border: 1px solid #888;
+	overflow-y:hidden; 
+	background-color: #444;
+}
+.type
+{
+	color:#89bdff;
+}
+hr
+{
+	background-color:grey;
+	width:75%;
+	margin:auto;	
+	/*box-shadow: 0px 0px 5px 5px black;*/
+}
+.editb
+{
+	float:right;
+}
+.edit_box
+{
+	border-radius: 5px;
+	background-color: grey;
+	box-shadow: inset 0px 0px 10px black;
+}
+.edit_insert
+{
+	float:right;
+	height:30px;
+	width:30px;
+	margin:3px;
+}

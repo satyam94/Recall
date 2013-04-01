@@ -24,8 +24,8 @@ function sendform(form,index,indexdone)
   var str=$("#11").html();
   
   var div_start="<div class = 'container'><div class = 'type'>"
-  var edit="<input type='button' value='e' onclick='editdata(" + length + "," + index + "," + indexdone + ")' class='cross' id='edit" + index + "'>";
-  var cross="<input type='button' value='x' onclick='deletedata(" + length + "," + index + "," + indexdone + ")' class='cross' id='input" + index + "'>";
+  var edit="<input type='image' src='images/edit.png' onclick='editdata(" + length + "," + index + "," + indexdone + ")' class='edit' id='edit" + index + "'>";
+  var cross="<input type='image' src='images/delete.png' onclick='deletedata(" + length + "," + index + "," + indexdone + ")' class='cross' id='input" + index + "'>";
   var div_end="</div></div>";
   var hr="<hr class = 'horizontal-ruler' id='hor" + index + "'>";
   
@@ -34,8 +34,8 @@ function sendform(form,index,indexdone)
   index++;
 
   var formhtml1='<form class="form">Newer Todo List<br>';
-  var formhtml2='<input type="text" name="todo" placeholder=" Add you Task here..." autofocus="true" class="text_area" id="inputfield" onkeydown="return keypres(this.form,' + index +","+indexdone+ ')">';
-  var formhtml3='<input type="image" src="insert.png" id="button" onclick="return sendform(this.form,' + index +","+indexdone+ ')"></form>';
+  var formhtml2='<input type="text" name="todo" placeholder=" Add you Task here" autofocus="true" class="text_area" id="inputfield" onkeydown="return keypres(this.form,' + index +","+indexdone+ ')">';
+  var formhtml3='<input type="image" src="images/insert.png" id="button" onclick="return sendform(this.form,' + index +","+indexdone+ ')"></form>';
 
   $("#10").html(formhtml1+formhtml2+formhtml3);
 
@@ -62,7 +62,7 @@ function deletedata(length,index,indexdone)
   newdone=newdone.substr(0,length);
 
   var div_start="<div class = 'container'><div class = 'type'>"
-  var input='<input type="button" value="x" onclick="totaldelete('+indexdone+')" class="cross" id="output'+indexdone+'">';
+  var input='<input type="image" src="images/delete.png" onclick="totaldelete('+indexdone+')" class="cross" id="output'+indexdone+'">';
   var div_end="</div></div>";
   var hr="<hr class = 'horizontal-ruler' id='hor_out"+indexdone+"'>";
   
@@ -92,9 +92,9 @@ function editdata(length,index,indexdone)
   console.log(length);
 
   var x="<form><input type='text' name='edit' value=" + str + " class='edit_box' onkeydown='return keypres1(this.form," + index + "," + indexdone + ")'>";
-  var sub="<input type='button' value='t' class='cross' onclick='return editvalue(this.form," + index + "," + indexdone + ")'>";
+  var sub="<input type='image' src='images/insert.png' class='edit_insert' onclick='return editvalue(this.form," + index + "," + indexdone + ")'>";
   console.log(str);
-  var rev="<input type='button' value='r' class='cross' onclick='return revert(" + str + "," + length + "," + index + "," + indexdone + ")'></form>";
+  var rev="<input type='image' src='images/revert.png' class='cross' onclick='return revert(" + str + "," + length + "," + index + "," + indexdone + ")'></form>";
   $("#input"+index).parent().html(x+sub+rev);
 }
 
@@ -129,8 +129,8 @@ function revert(str,length,index,indexdone)
   str+="\n";
   console.log(str);
   console.log(length);
-  var edit="<input type='button' value='e' onclick='editdata(" + length + "," + index + "," + indexdone + ")' class='cross' id='edit" + index + "'>";
-  var cross="<input type='button' value='x' onclick='deletedata(" + length + "," + index + "," + indexdone + ")' class='cross' id='input" + index + "'>";
+  var edit="<input type='image' src='images/edit.png' onclick='editdata(" + length + "," + index + "," + indexdone + ")' class='cross' id='edit" + index + "'>";
+  var cross="<input type='image' src='images/delete.png' onclick='deletedata(" + length + "," + index + "," + indexdone + ")' class='cross' id='input" + index + "'>";
   
   $("#div"+index).html(str + cross + edit);
 
